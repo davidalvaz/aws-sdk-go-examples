@@ -2,19 +2,17 @@ package main
 
 import (
 	"context"
-	"log"
-
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
+	"log"
 )
 
 func main() {
-	profile := "put-my-cli-config-profile-name-here"
+	// profile := "put-my-cli-config-profile-name-here"
+	profile := "training-dev"
 	ctx := context.TODO()
-	cfg, err := config.LoadDefaultConfig(ctx,
-		config.WithSharedConfigProfile(profile),
-	)
+	cfg, err := config.LoadDefaultConfig(ctx, config.WithSharedConfigProfile(profile))
 	if err != nil {
 		log.Fatal(err)
 	}
